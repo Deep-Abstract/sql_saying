@@ -21,18 +21,26 @@ Config
 -------------
 * following:
 	- 使用本dao你需要预先做几件事。我不崇尚让大家先把web后端开发中的entity包先一个个写好，而我这里使用的方法是这样的：
+	
 		- 在 mvc 文件目录下有一个config文件夹，进去需要填写两个文件：
+
 			- classDefine.py 
 			- daoDetails.py
 
 	- 这两个文件的作用，在java web里应该需要用至少1000倍于此的代码才能完成。
 
 	- classDefine.py中配置两个变量：
+
 		- classInfo : 一个list，其中每个元素是一个dict，
+
 			- dict有两个键：class 和 attrs，
+		
 				- class 表示 一个entity类的类名，是一个字符串
+		
 				- attrs 表示 一个entity类的属性，是一个字符串列表
+
 		- class_type_map:一个dict,用来将entity的属性按照一定的关系转成MySQL数据类型。
+
 			- 键名是表示MySQL数据类型；键值是一个字符串list，如果一个entity的属性字符串包含这个list中的一个值，那么这个属性就会对应到键名指定的MySQL类型。
 
 - demo:
@@ -77,21 +85,26 @@ Config
     		"user":"xxx",
     		"passwd":"xxx",
     		"port":3306
-		}
+			}
 
 
 
 
 Document
 --------
+
 然后你就可以开心的from mvc import dao了。
+
 dao里有两个东西要用
 
 * following
+
 		- baseDao
+
 		- deploy
 
 		- deploy类是用来建立和删除数据库对应表的。
+
 			- 构造一个deploy类，你需要一个entity对象。如果你写好了config里的文件，你就可以这样获得一个名为user（如果classDefine中有的话）的entity对象：
 			
 .. code:: python
