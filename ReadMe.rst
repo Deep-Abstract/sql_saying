@@ -38,12 +38,14 @@ Config
 	- dict有两个键：class 和 attrs，
 	
 	class 表示 一个entity类的类名，是一个字符串
+
 	attrs 表示 一个entity类的属性，是一个字符串列表
  
 - class_type_map:一个dict,用来将entity的属性按照一定的关系转成MySQL数据类型。
 	- 键名是表示MySQL数据类型；键值是一个字符串list，
 	
 	如果一个entity的属性字符串包含这个list中的一个值，
+	
 	那么这个属性就会对应到键名指定的MySQL类型。
 
 - demo:
