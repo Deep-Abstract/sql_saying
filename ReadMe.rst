@@ -22,9 +22,9 @@ Config
 * following:
 	- 使用本dao你需要预先做几件事。我不崇尚让大家先把web后端开发中的entity包先一个个写好，而我这里使用的方法是这样的：
 		- 在 mvc 文件目录下有一个config文件夹，进去需要填写两个文件：
-			- classDefine.py
-		- 和 
+			- classDefine.py 
 			- daoDetails.py
+
 	- 这两个文件的作用，在java web里应该需要用至少1000倍于此的代码才能完成。
 
 	- classDefine.py中配置两个变量：
@@ -89,10 +89,10 @@ dao里有两个东西要用
 
 * following
 		- baseDao
-		- 和
 		- deploy
+
 		- deploy类是用来建立和删除数据库对应表的。
-		- 构造一个deploy类，你需要一个entity对象。如果你写好了config里的文件，你就可以这样获得一个名为user（如果classDefine中有的话）的entity对象：
+			- 构造一个deploy类，你需要一个entity对象。如果你写好了config里的文件，你就可以这样获得一个名为user（如果classDefine中有的话）的entity对象：
 			
 .. code:: python
 			from mvc.entity import entities
@@ -105,7 +105,7 @@ dao里有两个东西要用
 			dep.createTable(); #创建数据表
 			dep.dropTable(); #删除数据表
 
-baseDao类是用来创建一个dao对象的，它不需要传入entity对象来构造。
+		- baseDao类是用来创建一个dao对象的，它不需要传入entity对象来构造。
 
 .. code:: python
 
