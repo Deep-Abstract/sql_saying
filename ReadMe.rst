@@ -83,6 +83,7 @@ Document
 --------
 然后你就可以开心的from mvc import dao了。
 dao里有两个东西要用
+
 * following
 		- baseDao
 		- 和
