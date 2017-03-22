@@ -7,13 +7,15 @@ PyMVC
 ======
 ReadMe File: dao.
 中文文档：
+.. contents:: Table of Contents
+   :local:
 
 Requirements
 -------------
 * PyMySQL
 	- pip install pymysql
 
-Statements
+Config
 -------------
 * following:
 	* 使用本dao你需要预先做几件事。我不崇尚让大家先把web后端开发中的entity包先一个个写好，而我这里使用的方法是这样的：
@@ -74,9 +76,12 @@ Statements
     		"port":3306
 		}
 
+Document
+--------
 
 然后你就可以开心的from mvc import dao了。
-* dao里有两个东西要用，
+dao里有两个东西要用。
+* following
 		- baseDao
 		- 和
 		- deploy
