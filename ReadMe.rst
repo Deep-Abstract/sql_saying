@@ -107,13 +107,13 @@ dao里有两个东西要用
 deploy类是用来建立和删除数据库对应表的。
 	- 构造一个deploy类
 		
-		你需要一个entity对象。
+		你需要一个entity对象来初始化。
 		
-		如果你写好了config里的文件，
+		如果你写好了config里的文件，那么，
 
-		你就可以这样获得一个名为user
+		你可以这样获得一个名为user的entity对象
 
-		（如果classDefine中有的话）的entity对象：
+		（如果classDefine中有user这个类的话）
 			
 .. code:: python
 			from mvc.entity import entities
