@@ -16,20 +16,20 @@ class deploy:
     you can easily create a table associated with an entity in this way:
         (if I write a class named "user" in "config.json")
         
-        from pymysql.easyMVC.dao import deploy
-        from pymysql.easyMVC.entity import entities
+        from mvc.dao import deploy
+        from mvc.entity import entities
         user=entities.user
         deploy(user).createTable()
         # now the table named user is established.
     
     also you can destroy a table named "user" in this way:
-        from pymysql.easyMVC.dao import deploy
-        from pymysql.easyMVC.entity import entities
+        from mvc.dao import deploy
+        from mvc.entity import entities
         user=entities.user
         deploy(user).dropTable()
     
     and you can create all the tables associated with "config.json" in this way:
-        from pymysql.easyMVC import entity,deploy
+        from mvc import entity,deploy
         entities=entity.entities
         for entity_i in entities.attrs:
             dao.deploy(entities.get(entity_i)).createTable()
@@ -43,14 +43,16 @@ class deploy:
         typemap=entity.typemap
         attrs=''.join("%s %s %s"%(key,typemap[key],'primary key auto_increment,' if key=='id' else ',') for key in typemap)
         db=getDataBase()
+       
         with db:
             cur=db.cursor()
             cur.execute(sql%(entity.table,attrs[:-1]))
             cur.close()
         db.close()
     def dropTable(self):
-        sql="drop table %s"%(self.entity.table)
+        sql="drop table %s;"%(self.entity.table)
         db=getDataBase()
+        print(sql)
         with db:
             cur=db.cursor()
             cur.execute(sql)
