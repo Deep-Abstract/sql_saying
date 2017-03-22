@@ -20,9 +20,9 @@ Requirements
 Config
 -------------
 * following:
-	- 使用本dao你需要预先做几件事。我不崇尚让大家先把web后端开发中的entity包先一个个写好，而我这里使用的方法是这样的：
-	
-		- 在 mvc 文件目录下有一个config文件夹，进去需要填写两个文件：
+	使用本dao你需要预先做几件事。我不崇尚让大家先把web后端开发中的entity包先一个个写好，而我这里使用的方法是这样的：
+
+		在 mvc 文件目录下有一个config文件夹，进去需要填写两个文件：
 
 			- classDefine.py 
 			- daoDetails.py
