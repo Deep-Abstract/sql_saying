@@ -35,9 +35,9 @@ Config
 
 - classDefine.py中配置两个变量：
 
- classInfo : 一个list，其中每个元素是一个dict，
+* classInfo : 一个list，其中每个元素是一个dict，
 
- dict有两个键：class 和 attrs，
+- dict有两个键：class 和 attrs，
 		
  - class 表示 一个entity类的类名，是一个字符串
 		
