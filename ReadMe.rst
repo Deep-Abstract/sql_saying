@@ -23,13 +23,13 @@ Config
 使用本dao你需要预先做几件事。我不崇尚让大
 家先把web后端开发中的entity包先一个个写好，
 而我这里使用的方法是这样的：
-	- 在 mvc 文件目录下有一个config文件夹，
-	进去需要填写两个文件：
-		- classDefine.py 
-		- daoDetails.py
+- 在 mvc 文件目录下有一个config文件夹，
+进去需要填写两个文件：
+	- classDefine.py 
+	- daoDetails.py
 
-	- 这两个文件的作用，在java web里应该需要用
-	至少1000倍于此的代码才能完成。
+- 这两个文件的作用，在java web里应该需要用
+至少1000倍于此的代码才能完成。
 
 	- classDefine.py中配置两个变量：
 	- classInfo : 一个list，其中每个元素是一个dict，
@@ -40,6 +40,7 @@ Config
 		- 键名是表示MySQL数据类型；键值是一个字符串list，如果一个entity的属性字符串包含这个list中的一个值，那么这个属性就会对应到键名指定的MySQL类型。
 
 - demo:
+
 .. code:: python
 
 
@@ -86,10 +87,8 @@ Document
 --------
 然后你就可以开心的from mvc import dao了。
 dao里有两个东西要用
-
 - baseDao
 - deploy
-
 	- deploy类是用来建立和删除数据库对应表的。
 	- 构造一个deploy类，你需要一个entity对象。如果你写好了config里的文件，你就可以这样获得一个名为user（如果classDefine中有的话）的entity对象：
 			
@@ -108,20 +107,19 @@ dao里有两个东西要用
 
 .. code:: python
 
-userdao=baseDao('user')
+	userdao=baseDao('user')
 	#这就相当于创建了java web后台里的一个UserDao类的实例。
-userdao.add(user=newuser)
+	userdao.add(user=newuser)
 	#user表增加一条记录，其字段值是newuser的各属性值。
 	#类似的还有
 	userdao.add(username="saber",password="123",email="fafafa@bili.com")
 	#user表增加一条记录，其字段值与传入参数分别对应
-
-"""
-add 方法和delete，select方法一致，都可以传入对象做参数，或者按照字典形式传参，
-其中select和delete方法中，传入的各个参数之间是 逻辑交 的关系，也就是MySQL里面 where ... and ... and ...的形式。
-change方法稍微有一点不同，它接受 属性/字段名=value的传参，这些  属性/字段名 表示需要改变的  属性/字段名 的值，
-在  属性/字段名前面加上"_"，表示需要将这些选中的记录的对应  属性/字段名 修改成对应值。
-"""
+	"""
+	add 方法和delete，select方法一致，都可以传入对象做参数，或者按照字典形式传参，
+	  其中select和delete方法中，传入的各个参数之间是 逻辑交 的关系，也就是MySQL里面 where ... and ... and ...的形式。
+	change方法稍微有一点不同，它接受 属性/字段名=value的传参，这些  属性/字段名 表示需要改变的  属性/字段名 的值，
+	  在  属性/字段名前面加上"_"，表示需要将这些选中的记录的对应  属性/字段名 修改成对应值。
+	"""
 
 All above is what should be known about PyMVC!
 
