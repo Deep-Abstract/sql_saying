@@ -41,6 +41,7 @@ Config
 	- dict有两个键：class 和 attrs
 		
 		class 表示 一个entity类的类名，是一个字符串
+
 		attrs 表示 一个entity类的属性，是一个字符串列表
  
 - class_type_map:一个dict,用来将entity的属性按照一定的关系转成MySQL数据类型。
@@ -81,9 +82,9 @@ Config
 
 
 - daoDetails.py
-- 可以看成是配置MySQL连接的一个json。
+	- 可以看成是配置MySQL连接的一个json。
+	
 - demo:
-
 .. code:: python
 		dbargs={
     		"host":"x.x.x.x",
@@ -93,25 +94,20 @@ Config
     		"port":3306
 			}
 
-
-
-
 Document
 --------
 
 然后你就可以开心的from mvc import dao了。
 
 dao里有两个东西要用
+- baseDao
 
-* following
+- deploy
 
-		- baseDao
 
-		- deploy
+deploy类是用来建立和删除数据库对应表的。
 
-		- deploy类是用来建立和删除数据库对应表的。
-
-			- 构造一个deploy类，你需要一个entity对象。如果你写好了config里的文件，你就可以这样获得一个名为user（如果classDefine中有的话）的entity对象：
+	- 构造一个deploy类，你需要一个entity对象。如果你写好了config里的文件，你就可以这样获得一个名为user（如果classDefine中有的话）的entity对象：
 			
 .. code:: python
 			from mvc.entity import entities
