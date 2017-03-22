@@ -64,10 +64,10 @@ Config
 	}
 
 
-	* daoDetails.py
-	* 可以看成是配置MySQL连接的一个json。
-	* demo:
-	.. code:: python
+* daoDetails.py
+* 可以看成是配置MySQL连接的一个json。
+* demo:
+.. code:: python
 		dbargs={
     		"host":"x.x.x.x",
     		"db":"xxx",
@@ -76,11 +76,13 @@ Config
     		"port":3306
 		}
 
+
+
+
 Document
 --------
-
 然后你就可以开心的from mvc import dao了。
-dao里有两个东西要用。
+dao里有两个东西要用
 * following
 		- baseDao
 		- 和
