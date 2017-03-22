@@ -1,14 +1,16 @@
-.. image:: https://img.shields.io/badge/license-MIT-blue.svg
+.. image:: https://img.shields.io/badge/license-Apache-blue.svg
     :target: https://github.com/DeepAbstract/PyMVC/blob/master/LICENSE
-
-
 
 PyMVC
 ======
-ReadMe File: dao.
-中文文档：
+
+
+
 .. contents:: Table of Contents
    :local:
+
+ReadMe File: dao.
+中文文档：
 
 Requirements
 -------------
