@@ -16,7 +16,6 @@ Requirements
 -------------
 
 * PyMySQL
-
 	- pip install pymysql
 
 
