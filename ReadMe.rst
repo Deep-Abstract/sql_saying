@@ -20,22 +20,22 @@ Requirements
 Config
 -------------
 * following:
-	* 使用本dao你需要预先做几件事。我不崇尚让大家先把web后端开发中的entity包先一个个写好，而我这里使用的方法是这样的：
+	- 使用本dao你需要预先做几件事。我不崇尚让大家先把web后端开发中的entity包先一个个写好，而我这里使用的方法是这样的：
 		- 在 mvc 文件目录下有一个config文件夹，进去需要填写两个文件：
 			- classDefine.py
 		- 和 
 			- daoDetails.py
-	* 这两个文件的作用，在java web里应该需要用至少1000倍于此的代码才能完成。
+	- 这两个文件的作用，在java web里应该需要用至少1000倍于此的代码才能完成。
 
-	* classDefine.py中配置两个变量：
+	- classDefine.py中配置两个变量：
 		- classInfo : 一个list，其中每个元素是一个dict，
 			- dict有两个键：class 和 attrs，
 				- class 表示 一个entity类的类名，是一个字符串
 				- attrs 表示 一个entity类的属性，是一个字符串列表
 		- class_type_map:一个dict,用来将entity的属性按照一定的关系转成MySQL数据类型。
 			- 键名是表示MySQL数据类型；键值是一个字符串list，如果一个entity的属性字符串包含这个list中的一个值，那么这个属性就会对应到键名指定的MySQL类型。
-	* demo:
 
+- demo:
 
 .. code:: python
 
@@ -66,9 +66,10 @@ Config
 	}
 
 
-* daoDetails.py
-* 可以看成是配置MySQL连接的一个json。
-* demo:
+- daoDetails.py
+- 可以看成是配置MySQL连接的一个json。
+- demo:
+
 .. code:: python
 		dbargs={
     		"host":"x.x.x.x",
