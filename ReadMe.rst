@@ -91,7 +91,7 @@ dao里有两个东西要用
 		- deploy类是用来建立和删除数据库对应表的。
 		- 构造一个deploy类，你需要一个entity对象。如果你写好了config里的文件，你就可以这样获得一个名为user（如果classDefine中有的话）的entity对象：
 			
-		.. code:: python
+.. code:: python
 			from mvc.entity import entities
 			User=entities.user
 				#这个User是一个属性值全空的对象，你可以把它当做类使用。
@@ -102,8 +102,8 @@ dao里有两个东西要用
 			dep.createTable(); #创建数据表
 			dep.dropTable(); #删除数据表
 
-		baseDao类是用来创建一个dao对象的，它不需要传入entity对象来构造。
-		.. code:: python
+baseDao类是用来创建一个dao对象的，它不需要传入entity对象来构造。
+.. code:: python
 			userdao=baseDao('user')
 				#这就相当于创建了java web后台里的一个UserDao类的实例。
 			userdao.add(user=newuser)
