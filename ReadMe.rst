@@ -84,6 +84,7 @@ Config
 - daoDetails.py
 	- 可以看成是配置MySQL连接的一个json。
 - demo:
+
 .. code:: python
 		dbargs={
     		"host":"x.x.x.x",
@@ -99,9 +100,9 @@ Document
 然后你就可以开心的from mvc import dao了。
 
 dao里有两个东西要用
-- baseDao
+	- baseDao
 
-- deploy
+	- deploy
 
 
 deploy类是用来建立和删除数据库对应表的。
@@ -126,7 +127,7 @@ deploy类是用来建立和删除数据库对应表的。
 			dep.createTable(); #创建数据表
 			dep.dropTable(); #删除数据表
 
-		- baseDao类是用来创建一个dao对象的，它不需要传入entity对象来构造。
+- baseDao类是用来创建一个dao对象的，它不需要传入entity对象来构造。
 
 .. code:: python
 
