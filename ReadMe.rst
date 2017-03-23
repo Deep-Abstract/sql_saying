@@ -83,8 +83,9 @@ Config
 
 - daoDetails.py
 	- 可以看成是配置MySQL连接的一个json。
-- demo:
 
+
+- demo:
 .. code:: python
 	dbargs={
     	"host":"x.x.x.x",
@@ -93,6 +94,7 @@ Config
     	"passwd":"xxx",
     	"port":3306
 		}
+
 
 Document
 --------
