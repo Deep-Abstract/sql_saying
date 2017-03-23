@@ -86,13 +86,13 @@ Config
 - demo:
 
 .. code:: python
-		dbargs={
-    		"host":"x.x.x.x",
-    		"db":"xxx",
-    		"user":"xxx",
-    		"passwd":"xxx",
-    		"port":3306
-			}
+	dbargs={
+    	"host":"x.x.x.x",
+    	"db":"xxx",
+    	"user":"xxx",
+    	"passwd":"xxx",
+    	"port":3306
+		}
 
 Document
 --------
