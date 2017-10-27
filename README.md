@@ -1,4 +1,4 @@
-# sql saying : An Convenient SQL Wrapper
+# sql saying : A Convenient SQL Wrapper
 
 `sql saying` is a lightweight MySQL wrapper using [pymysql](https://github.com/PyMySQL/PyMySQL).  
 It's for the people who're trying to develop projects with database operations in a fast and graceful way.
