@@ -65,14 +65,126 @@ for template_entity in Entities.items():
 
 Assume you've initialized a table `user`.
 
-```
+**`user`**
 
-```
+| id | username | password  | email       |
+|--- | -------  | -------   | -------     |
+| 0  | archer   | ubw       | xxx@yyy.com |
+| 1  | misaka   | bilibili  | zzz@aaa.com |
+|... | ...      | ...       |     ...     | 
+
+
+- `select`
+
+    ```python
+    import dao
+    userDao = baseDao('user')
+    userDao.select(id=1, username='unknown')
+    # `select * where id=1 and username='unknown'`
+    #=> ()
+    userDao.select(password = 'ubw')
+    # `select * where password='ubw'`
+    # => {'id':1, 
+    #    'username':'misaka',
+    #    'password':'bilibili',
+    #    'email':'zzz@aaa.com'}
+    configs = dict()
+    configs['username'] = 'misaka'
+    configs['id'] = 1
+    userDao.select(**configs)
+    #=> {'id':1, 
+    #    'username':'misaka',
+    #    'password':'bilibili',
+    #    'email':'zzz@aaa.com'}
+
+    userDao.selectAll()
+    # which equals to 
+    # `select * from user;`
+    ```
 
 - `insert`
+
+    ```python
+    import dao
+    userDao = baseDao('user')
+
+    # insert single tuple.
+    userDao.add(username='saber', password='ex')
+    # `insert into user (username, password) values ('saber', 'ex');`
+    # the field `email` is not assigned and it's a default value `null`.
+
+    # insert multiple tuples.
+    userDao.add_multiple(['username', 'password'], # fields
+
+                         [['saber','ex'],          # values
+                          ['ruiko','lv0'],
+                          ...
+                         ])
     ```
 
+- `delete`
+
+    Very similar to `baseDao.add`.
+
+    ```python
+    import dao
+    userDao = baseDao('user')
+    userDao.delete(username = 'saber', password = 'ex')
+    # `delete from user where username='saber' and password='ex';`
+
     ```
+
+- `update`
+
+    ```python
+    """
+        change the information of selected records.
+        
+        match the records by passing key-value pairs.
+        and change the value of specific field by passing _key-value pairs, \
+        like this way:
+        
+        userDao.change(username='caster',_username="rider")
+        #you change usernames of all the records whose username are 'caster' to 'rider'.
+    """
+    userDao.change(username='caster',_username="rider", _password='1')
+    # `update user set username='rider', password='1' where username='caster';`
+    ```
+
+- `check`
+
+    To check if any record matching some conditions exists in your datas.
+
+    ```python
+    userDao.check(username='nightnight', email='twshere@outlook.com')
+    #=> 0
+    userDao.check(username='archer')
+    #=> 1
+    ```
+
+## Powerful Entity Template
+
+```python
+
+from entity import Entity
+User = Entity(['username', 'password', 'email', 'id'], name = 'user')
+User.to_map()
+# =>{'username':None,
+#    'password':None,
+#    'email':None,
+#    'id':None}
+
+a_user = User() # `User` looks like a entity class.
+a_user.username = '123'
+a_user['email'] = 'xxx@b.com'
+a_user.to_map()
+# =>{'username':'123',
+#    'password':None,
+#    'email':'xxx@b.com',
+#    'id':None}
+
+
+```
 
 
 
