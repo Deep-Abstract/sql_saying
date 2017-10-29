@@ -183,7 +183,7 @@ a_user.to_map()
 #    'email':'xxx@b.com',
 #    'id':None}
 
-# user an template to create a database.
+# use a template to create a database.
 from dao import deploy
 deploy(User).create_table()
 # now the table `user` has been created!
