@@ -56,7 +56,7 @@ And then when you `import entity`, `entity.Entities` can be used to initial your
 import dao
 from entity import Entities 
 
-for template_entity in Entities.items():
+for template_entity in Entities:
     dao.deploy(template_entity).create_table()
     # dao.deploy(template_entity['class']).drop_table() # if you want to delete the table.
 ```
